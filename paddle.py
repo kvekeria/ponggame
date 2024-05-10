@@ -1,12 +1,12 @@
 from turtle import Turtle, Screen
 
 class Paddle:
-    def __init__(self, x_cor, y_cor):
+    def __init__(self, position):
         self.paddle = Turtle(shape='square')
         self.paddle.shapesize(5, 1)
         self.paddle.color("white")
         self.paddle.pu()
-        self.paddle.goto(x_cor, y_cor)
+        self.paddle.goto(position)
 
     def go_up(self):
         new_y = self.paddle.ycor() + 20
