@@ -24,4 +24,26 @@ class Ball(Turtle):
 
     def change_direction(self):
         self.x_move *= -1
-        self.y_move *= 1
+        self.y_move *= -1
+
+    def reset(self):
+        self.goto(0, 0)
+        self.x_move *= -1
+        if self.x_move < 0:
+            self.x_move = -2
+            self.y_move = -2
+        else:
+            self.x_move = 2
+            self.y_move = 2
+
+    def increase_speed(self, amt):
+        if self.x_move < 0:
+            self.x_move -= amt
+        elif self.x_move > 0:
+            self.x_move += amt
+
+        if self.y_move < 0:
+            self.y_move -= amt
+        elif self.y_move > 0:
+            self.y_move += amt
+
